@@ -3,7 +3,7 @@
         <h5 class="font-weight-bold">{{ config('vienblog.sidebar.latest.title') }}</h5>
         <ol class="list-unstyled mb-0">
             @foreach($sidebar_latest as $hot)
-                <li class="d-flex justify-content-between align-items-center">
+                <li class="d-flex justify-content-between align-items-center mb-1">
                     <a class="text-secondary overflow-slh" href="{{ route('home.blog.article', $hot['slug']) }}">
                         {!! $hot['title'] !!}
                     </a>
