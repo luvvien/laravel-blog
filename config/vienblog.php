@@ -73,19 +73,19 @@ return [
             "open" => true, // 是(true)否(false)开启 默认true 开启务必设置banners
             "banners" => [ // 设置滚动的Banner 请让图的长宽比都相同 否则切换时高度会变化
                 [
-                    "image" => "/images/banners/vultr.png", // 图片路径
+                    "image" => "/images/banners/vultr_affiliate_560x260.png", // 图片路径
                     "url" => "https://www.vultr.com/?ref=7896745-4F", // 点击后的跳转链接
                     "description" => "优质国外服务器供应商Vultr限时注册送50刀", // Banner描述 用于img标签的alt属性
                 ],
                 [
-                    "image" => "/images/banners/vultr.png", // 图片路径
-                    "url" => "https://www.vultr.com/?ref=7896745-4F", // 点击后的跳转链接
-                    "description" => "优质国外服务器供应商Vultr限时注册送50刀", // Banner描述 用于img标签的alt属性
+                    "image" => "/images/banners/ali_affiliate_560x260.png", // 图片路径
+                    "url" => "https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=clx8dxhx", // 点击后的跳转链接
+                    "description" => "阿里云高性能服务器低至2折", // Banner描述 用于img标签的alt属性
                 ],
                 [
-                    "image" => "/images/banners/vultr.png", // 图片路径
-                    "url" => "https://www.vultr.com/?ref=7896745-4F", // 点击后的跳转链接
-                    "description" => "优质国外服务器供应商Vultr限时注册送50刀", // Banner描述 用于img标签的alt属性
+                    "image" => "/images/banners/tencent_affiliate_560x260.png", // 图片路径
+                    "url" => "https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=2d48606c208631c31d73aadcb8412bab&from=console", // 点击后的跳转链接
+                    "description" => "推广者专属福利，新客户无门槛领取总价值高达2860元代金券，每种代金券限量500张，先到先得。", // Banner描述 用于img标签的alt属性
                 ],
             ]
         ],

@@ -8,7 +8,7 @@
         <div class="carousel-inner border-light border">
             @foreach(config('vienblog.sidebar.carousel.banners') as $key => $banner)
                 <div class="carousel-item{{ $key == 0 ? " active" : ""}}">
-                    <a href="{{ $banner['url'] }}">
+                    <a href="{{ $banner['url'] }}" target="_blank" rel="nofollow">
                         <img class="d-block w-100" src="{{ $banner['image'] }}" alt="{{ $banner['description'] }}">
                     </a>
                 </div>
