@@ -7,8 +7,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
+                <a href="https://vienblog.com"></a>
                 <ul class="navbar-nav mr-auto">
-                    <a href="https://vienblog.com"></a>
                     <li class="nav-item">
                         <a class="nav-link" href="/">首页<span class="sr-only">(current)</span></a>
                     </li>

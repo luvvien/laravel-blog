@@ -14,7 +14,7 @@
                         @if($link['img'])
                             <img class="card-img-top" src="{{$link['img']}}" alt="{{$link['title']}}">
                         @endif
-                        <div class="card-body p-2">
+                        <div class="card-body p-3">
                             <h5 class="card-title mb-0">{{$link['title']}}</h5>
                             <small class="text-muted">{{$link['description']}}</small>
                         </div>

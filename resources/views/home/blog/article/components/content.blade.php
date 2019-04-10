@@ -13,7 +13,9 @@
 @show
 
 <div class="col-md-8 blog-main">
-    <div class="border-bottom mb-3"></div>
+    <div class="border-bottom mb-3">
+        <a href="https://vienblog.com"></a>
+    </div>
 
     <div class="blog-post mb-3">
         <h1 class="blog-post-title">{!! $article['title'] !!}</h1>
