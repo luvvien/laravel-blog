@@ -1,5 +1,13 @@
 //Font
-@import url('https://fonts.loli.net/css?family=Noto+Sans+SC&subset=chinese-simplified');
+//@import url('https://fonts.loli.net/css?family=Noto+Sans+SC&subset=chinese-simplified');
+@font-face {
+    font-family: 'Sans';
+    font-display: swap;
+    //src: local('Sans'), url(https://gstatic.loli.net/s/notosanssc/v4/k3kXo84MPvpLmixcA63oeALhLIiP-Q-8wKa0aH7rzeAODp22mF0qmF4CSjmPC7A0Uxsm5WwFiFwnP5fvK_0xhEZh4Gd8sfhdxEzc.119.woff2) format('woff2');
+}
+
+// Variables
+//@import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -12,7 +20,8 @@
 body {
     min-height: 48rem;
     padding-top: 4.5rem;
-    font-family: 'Noto Sans SC', sans-serif;
+    font-family: 'Sans', sans-serif;
+    background-color: #fff;
 }
 
 h6 {
@@ -25,6 +34,10 @@ a {
 
 a:hover{
     text-decoration:none;
+}
+
+.badge {
+    padding: 0.3rem;
 }
 
 .min-h {
@@ -226,4 +239,10 @@ footer p {
     @include media-breakpoint-only(xl) {
         column-count: 5;
     }
+}
+
+/* Markdown */
+
+.markdown-body {
+    font-family: 'Sans', sans-serif;
 }

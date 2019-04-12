@@ -26,7 +26,7 @@
 <!-- Styles -->
     {{--<link rel="stylesheet"--}}
     {{--href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">--}}
-{{--    <link href="{{ asset('css/base.css') }}" rel="stylesheet">--}}
+    {{--    <link href="{{ asset('css/base.css') }}" rel="stylesheet">--}}
     @section('css')
         <link href="{{ mix('/css/web.css') }}" rel="stylesheet" type="text/css"/>
     @show
@@ -44,6 +44,16 @@
 @section('js')
     <!-- Scripts -->
     <script src="{{ mix('js/web.js') }}"></script>
+    <script src="{{ asset('js/jquery.lazyload.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.scrollstop.min.js') }}"></script>
+    <script>
+        $("img.lazyload").lazyload({
+            threshold: 600,
+            effect: "fadeIn",
+            failure_limit: 20,
+            skip_invisible: false
+        });
+    </script>
 @show
 @section('js_ext')
 @show

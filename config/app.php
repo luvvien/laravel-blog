@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        yasmuru\LaravelTinify\LaravelTinifyServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -225,7 +226,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Tinify' => yasmuru\LaravelTinify\Facades\Tinify::class,
     ],
 
 ];

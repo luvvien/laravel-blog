@@ -7,7 +7,7 @@
                     @if($article['is_top'] == 1)
                         <span class="badge badge-danger align-top">置顶</span>
                     @endif
-                    <span class="badge badge-secondary align-top">{!! $article['category']['cate_name'] !!}</span>
+                    <span class="badge badge-info align-top">{!! $article['category']['cate_name'] !!}</span>
                     {!! $article['title'] !!}
                 </a>
                 <p class="pt-1 mb-0 text-muted text-break">

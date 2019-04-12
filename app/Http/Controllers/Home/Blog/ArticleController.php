@@ -6,6 +6,7 @@ use App\Models\Blog\Article;
 use App\Models\Blog\ArticleTag;
 use App\Models\Blog\Category;
 use App\Models\Blog\Tag;
+use DOMDocument;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -56,7 +57,8 @@ class ArticleController extends CommonController
             ->get();
 
         $article = $article->toArray();
-        $article['markdown'] = markdown($article['markdown']);
+//        $article['markdown'] = markdown($article['markdown']);
+        $article['markdown'] = $this->lazyImageMarkdown(markdown($article['markdown']));
 
         $data['article'] = $article;
         $data['article']['tags'] = $tags->toArray();
@@ -78,6 +80,25 @@ class ArticleController extends CommonController
             ->limit(8)->get();
 
         return $this->parseToArray($articles);
+    }
+
+    protected function lazyImageMarkdown($markdown)
+    {
+        $dom = new DomDocument();
+        $dom->loadHTML('<?xml encoding="UTF-8">'.$markdown);
+
+        $list = $dom->getElementsByTagName('img');
+        foreach($list as $i => $item){
+            if ($i == 0) continue;
+            $attr_src = $item->getAttribute('src');
+            $item->setAttribute("data-original", $attr_src);
+            $item->setAttribute("src", "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E");
+//            $item->removeAttribute('src');
+            $item->setAttribute('class', 'lazyload');
+        }
+
+        $html = $dom->saveHTML();
+        return $html;
     }
 
 }
