@@ -30,6 +30,7 @@
     @section('css')
         <link href="{{ mix('/css/web.css') }}" rel="stylesheet" type="text/css"/>
     @show
+    @section('css_ext')@show
     @section('ads')
         @if(env('APP_DEBUG') == false and config('vienblog.ad') == true)
             @include('ads.adsense')

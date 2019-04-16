@@ -1,6 +1,6 @@
 @extends('home.layouts.app')
 
-@section('css')
+@section('css_ext')
     <style>
         :root {
             --input-padding-x: .75rem;
