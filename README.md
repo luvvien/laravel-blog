@@ -1,6 +1,14 @@
-# laravel-blog
-Vien Blog - 一款简洁好用的博客，一款基于laravel5.8开发的，支持markdown编辑以及图片拖拽上传的博客系统
+ # laravel-blog
+Vien Blog - 一款基于laravel5.8开发的，支持markdown编辑以及图片拖拽上传的博客系统、SEO友好
 
+## 博主网站
+
+- [VienBlog](https://vienblog.com)
+- [这里有些小秘密](https://vien.tech)
+
+## 项目Github地址
+
+Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
 
 ## 博客亮点
 
@@ -14,22 +22,22 @@ Vien Blog - 一款简洁好用的博客，一款基于laravel5.8开发的，支�
 
 ## 博客展示
 
-Demo演示地址: [这是一个DEMO](http://39.106.108.23)
+Demo演示地址: [这是一个DEMO](https://vienblog.com)
 
 ### 后台管理
 
 #### 文章列表
 
-主要操作有创作、编辑、置顶、删除（软删除）
-![article list](https://vien.tech/storage/20190329/nRFjHMQlsaz1AUeHeB1ufvKa2iSnlroLbv4avC1h.png)
+主要操作有查询、创作、编辑、置顶、删除（软删除）
+![Laravel Markdown Blog Admin 文章列表 - VienBlog](/storage/images/article/20190412/LIn93Jcw8cOmxSKRLEVYyDolRcVbxqS2AAXQiNOg.png)
 
 #### 创作和编辑
 
 创作和编辑页面
-![create update](https://vien.tech/storage/20190329/g9ZKOHqOoKw2Svha2qLJm1tWW2yIEeJNiosNhXxo.png)
+![Laravel Markdown Blog Admin 添加新文章 - VienBlog](/storage/images/article/20190406/G8zTereQphzI0ZO3qlpl58z8Ufz0uPfPHfP2WrtL.png)
 
 Markdown编辑器：支持拖拽粘贴上传图片、预览、全屏、分屏预览
-![markdown](https://vien.tech/storage/20190329/lpoGRc4tVlZhD4mXuTBWXRx9TLwRjeGAVfrVGe8k.png)
+![Laravel Markdown Blog Admin Markdown编辑器 - VienBlog](/storage/images/article/20190406/WtKU7tsblKvBMgaFROx3WFdwmD6GPEtZcw2tY1QG.png)
 
 ### 前端展示
 
@@ -61,7 +69,13 @@ composer install
 cp .env.example .env
 ```
 
-##### 创建数据库`vienblog` ，字符集采用 `utf8mb4`, `utf8mb4_general_ci`
+##### 生成key
+
+```
+php artisan key:generate
+```
+
+##### 创建MySQL数据库`vienblog` ，字符集采用 `utf8mb4`, `utf8mb4_general_ci`
 
 ##### 编辑`.env`文件 `vim .env`，修改MySQL数据库连接配置，请将`DB_HOST`，`DB_PORT`，`DB_USERNAME`，`DB_PASSWORD` 改成你的数据库配置。
 
@@ -165,6 +179,6 @@ Email: support@vienblog.com
 
 ## License
 
-- 使用Vien Blog构建应用，必须在页脚保留Powered by Vien Blog字样以及相关链接
+- 使用[Vien Blog](https://vienblog.com)构建应用，必须在页脚保留**Powered by Vien Blog**字样以及[相关链接](https://vienblog.com)
 - 在遵守以上规则的情况下，你可以享受等同于`MIT License`协议的授权。
-- 使用Vien Blog并且遵守上述协议的用户可以享受Vien Blog的博客导航，联系我将你的博客地址添加到Vien Blog的网站导航中。
+- 使用[Vien Blog](https://vienblog.com)并且遵守上述协议的用户可以享受[Vien Blog](https://vienblog.com)的博客导航，联系我将你的博客地址添加到[Vien Blog](https://vienblog.com)的网站导航中。 
