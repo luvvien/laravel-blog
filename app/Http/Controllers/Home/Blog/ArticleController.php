@@ -66,6 +66,17 @@ class ArticleController extends CommonController
 
         $this->sidebar($data);
 
+        $keywords = '';
+
+        foreach ($data['article']['tags'] as $i => $tag) {
+            if ($i == 0) $keywords .= $tag['tag_name'];
+            else $keywords .= ','.$tag['tag_name'];
+        }
+
+        $data['meta']['title'] = $article['title'];
+        $data['meta']['description'] = $article['description'];
+        $data['meta']['keywords'] = $keywords;
+
         return view('home.blog.article.index', $data);
     }
 

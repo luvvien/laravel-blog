@@ -24,6 +24,19 @@ class TagController extends CommonController
             ->orderByDesc('is_top')->orderByDesc('created_at');
         $data = $data->paginate($size)->toArray();
         $this->sidebar($data);
+
+        $description = $tag.'-';
+        $curLen = mb_strlen($description, 'UTF8');
+
+        foreach ($data['data'] as $article) {
+            $curLen += mb_strlen($article['title'], 'UTF8');
+            if ($curLen > 150) break;
+            $description .= $article['title'];
+        }
+
+        $data['meta']['title'] = '关于'.$tag.'的文章 - '.config("vienblog.blog.name");
+        $data['meta']['description'] = $description;
+        $data['meta']['keywords'] = $tag;
 //
         return view('home.index', $data);
     }

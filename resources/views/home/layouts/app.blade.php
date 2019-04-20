@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('title')
-        <title>@if(isset($meta)){{ $meta['title'] }}@else {{ config("vienblog.blog.name") }} @endif</title>
+        <title>@if(isset($meta)){{ $meta['title'] }}@else{{ config("vienblog.blog.name") }}@endif</title>
     @show
     @section('description')
         <meta name="description"
-              content="@if(isset($meta)){{ $meta['description'] }}@else {{ config("vienblog.blog.description") }} @endif">
+              content="@if(isset($meta)){{ $meta['description'] }}@else{{ config("vienblog.blog.description") }}@endif">
     @show
-    @section('keywords')@show
+    @section('keywords')
+        <meta name="keywords"
+              content="@if(isset($meta)){{ $meta['keywords'] }}@else{{'vienblog,vienblog.com,blog,markdown,laravel,laravel blog,markdown blog'}}@endif">
+    @show
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{--@if(env("APP_DEBUG") == false)--}}
