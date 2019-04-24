@@ -44,6 +44,13 @@
 <body>
 
 @yield('content')
+
+@section('counter')
+    @if(env('APP_DEBUG') == false and config('vienblog.counter') == true)
+        @include('counters.counter')
+    @endif
+@show
+
 </body>
 @section('js')
     <!-- Scripts -->
@@ -60,11 +67,6 @@
     </script>
 @show
 @section('js_ext')
-@show
-@section('counter')
-    @if(env('APP_DEBUG') == false and config('vienblog.counter') == true)
-        @include('counters.counter')
-    @endif
 @show
 @if(env('APP_DEBUG') == false and config('vienblog.baidu.auto_push') == true)
     <script>
