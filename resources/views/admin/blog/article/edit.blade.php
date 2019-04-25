@@ -62,7 +62,7 @@
                     <select class="form-control" id="cate_id" name="cate_id">
                         <option disabled selected>---请选择---</option>
                         @foreach($categories as $category)
-                            @if($category['id'] = $article['cate_id'])
+                            @if($category['id'] == $article['cate_id'])
                                 <option value="{{ $category['id'] }}" selected>{{ $category['cate_name'] }}</option>
                             @else
                                 <option value="{{ $category['id'] }}">{{ $category['cate_name'] }}</option>
