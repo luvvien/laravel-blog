@@ -36,7 +36,7 @@ return [
             ],
             [
                 "title" => "科学上网",
-                "url" => "https://vienblog.com/tag/科学上网" // 链接URL
+                "url" => "https://vien.tech/article/122" // 链接URL
             ],
             [
                 "title" => "网站导航",
