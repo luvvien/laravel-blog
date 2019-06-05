@@ -99,6 +99,8 @@ php artisan migrate
 php artisan db:seed
 ```
 
+如果遇到`SQLSTATE[42000] Syntax error or access violation Specified key was too long error`错误，请参照https://vien.tech/article/156 解决
+
 ##### 创建storage软连接
 
 ```
