@@ -13,7 +13,7 @@ return [
     ],
     "author" => [ // 博主
         "name" => "Vien", // 名字
-        "description" => "A huge huge fan of computer science, especially the direction of artificial intelligence.", // 简介
+        "description" => "A huge huge fan of computer science, especially the field of artificial intelligence.", // 简介
         "avatar" => "/images/avatars/lbxx-14.jpeg", // 头像
     ],
     "header" => [ // 顶部的(不是最顶部)导航
@@ -28,7 +28,7 @@ return [
             ],
             [
                 "title" => "打赏作者",
-                "url" => "https://vien.tech/pay" // 链接URL
+                "url" => "https://viencoding.com/pay" // 链接URL
             ],
             [
                 "title" => "建站教程",
@@ -36,7 +36,7 @@ return [
             ],
             [
                 "title" => "科学上网",
-                "url" => "https://vien.tech/article/122" // 链接URL
+                "url" => "https://viencoding.com/article/122" // 链接URL
             ],
             [
                 "title" => "网站导航",
@@ -44,7 +44,7 @@ return [
             ],
             [
                 "title" => "机器学习",
-                "url" => "https://aicodingart.com" // 链接URL
+                "url" => "https://vienblog.com/category/机器学习" // 链接URL
             ],
             [
                 "title" => "Laravel教程",
@@ -91,8 +91,8 @@ return [
         ],
         "motto" => [ // 座右铭
             "open" => true, // 是(true)否(false)开启 默认true,
-            "title" => "怯怯思语", // 标题
-            "content" => "如果幽默是一种罪过, 我早已恶贯满盈" // 内容
+            "title" => "关于作者", // 标题
+            "content" => "微信: luvvien 添加注明: vienblog.com" // 内容
         ],
         "tag" => [ // 标签
             "open" => true, // 是(true)否(false)开启 默认true,
