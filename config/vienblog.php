@@ -28,7 +28,7 @@ return [
             ],
             [
                 "title" => "打赏作者",
-                "url" => "https://vien.tech/pay" // 链接URL
+                "url" => "https://viencoding.com/pay" // 链接URL
             ],
             [
                 "title" => "建站教程",

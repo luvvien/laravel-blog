@@ -24,7 +24,7 @@ class FriendLinkTableSeeder extends Seeder
         DB::table('friend_links')->insert([
             'title'  => '小白一键VPN',
             'description' => 'ss/ssr一键搭建教程、outline教程、国外VPS优惠购买、免费ss/ssr账号分享',
-            'url' => 'https://vien.tech',
+            'url' => 'https://viencoding.com',
             'follow' => '1',
             'created_at' => 1553745930,
             'updated_at' => 1553745930,
