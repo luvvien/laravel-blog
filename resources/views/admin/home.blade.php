@@ -9,7 +9,7 @@
             <h5>关于作者</h5>
             <p>博客: <a href="https://vienblog.com"><strong>Vien Blog</strong></a></p>
             <p>邮箱: support@vienblog.com</p>
-            <p>一键搭建VPN教程、免费ss/ssr账号分享: <a href="https://vien.tech"><strong>Vien Tech</strong></a></p>
+            <p>其他博客(有小秘密哈哈): <a href="https://viencoding.com"><strong>Vien Tech</strong></a></p>
             <hr>
             <h5>关于Vien Blog</h5>
             <p>
