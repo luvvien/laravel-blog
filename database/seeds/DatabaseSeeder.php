@@ -13,5 +13,7 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(AdminTableSeeder::class);
          $this->call(FriendLinkTableSeeder::class);
+         $this->call(SiteInfoSeeder::class);
+         $this->call(SiteSwitchSeeder::class);
     }
 }

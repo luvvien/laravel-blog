@@ -35,8 +35,9 @@
     @show
     @section('css_ext')@show
     @section('ads')
-        @if(env('APP_DEBUG') == false and config('vienblog.ad') == true)
-            @include('ads.adsense')
+        @if(env('APP_DEBUG') == false and config('vienblog.ad.open') == true)
+            {{--@include('ads.adsense')--}}
+            {{ config('vienblog.ad.script') }}
         @endif
     @show
 
@@ -46,8 +47,9 @@
 @yield('content')
 
 @section('counter')
-    @if(env('APP_DEBUG') == false and config('vienblog.counter') == true)
-        @include('counters.counter')
+    @if(env('APP_DEBUG') == false and config('vienblog.counter.open') == true)
+{{--        @include('counters.counter')--}}
+        {{ config('vienblog.counter.script') }}
     @endif
 @show
 

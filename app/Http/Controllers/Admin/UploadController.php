@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use function MongoDB\BSON\toJSON;
 use yasmuru\LaravelTinify\Facades\Tinify;
 
 class UploadController extends Controller
@@ -21,15 +22,17 @@ class UploadController extends Controller
             && in_array($request->file->extension(), ["png", "jpg", "jpeg", "gif"])
         ) {
             $path = $request->file->store(date('Ymd'), config('vienblog.disks.article_image'));
-
             $url = Storage::disk(config('vienblog.disks.article_image'))->url($path);
 
+
             if (env('TINIFY_APIKEY', '') && in_array($request->file->extension(), ["png", "jpg", "jpeg"])) {
+
                 try {
                     set_time_limit(300);
                     $oldPath = public_path($url);
                     $result = Tinify::fromFile($oldPath);
-                    $result->toFile($oldPath);
+                    $result->toFile(str_replace('.png', '.jpg', $oldPath));
+                    return response()->json(['filename' => str_replace('.png', '.jpg', $url)]);
                 } catch (\Exception $e){
                     return response()->json(['filename' => $url]);
                 }

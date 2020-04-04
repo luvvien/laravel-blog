@@ -13,7 +13,7 @@ class UserController extends Controller
     //
     public function edit($id)
     {
-        $user = Admin::find($id)->toArray();
+        $user = Admin::query()->find($id)->toArray();
         return view('admin.user.edit', ['user' => $user]);
     }
 
@@ -28,7 +28,7 @@ class UserController extends Controller
 
 //        $data = ['email' => $input['email'], 'name' => $input['name'],];
 
-        $user = Admin::find($input['id']);
+        $user = Admin::query()->find($input['id']);
 
         if($input['password']) {
             $user->password =  Hash::make($input['password']);

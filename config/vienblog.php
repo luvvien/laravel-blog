@@ -123,8 +123,14 @@ return [
     "disks" => [
         "article_image" => "vienblog" // 文章中图片的disk(disk在filesystem.php中配置)
     ],
-    "ad" => false, // Google AdSense Auto AD 开关 默认关闭 开启需要在 resources/views/ads/adsense.blade.php 中添加 AdSense代码
-    "counter" => false, // 统计工具(例如百度统计、StatCounter等) 开关 默认关闭 开启需要在 resources/views/counters/counter.blade.php 中添加相关代码
+    "ad" => [
+        "open" => false, // Google AdSense Auto AD 开关 默认关闭 开启需要在后台中添加 AdSense代码
+        "script" => ""
+    ],
+    "counter" => [
+        "open" => false, // 统计工具(例如百度统计、StatCounter等) 开关 默认关闭 开启需要在后台中添加相关代码
+        "script" => ""
+        ],
     "baidu" => [ // 提交站内链接给百度 请先登录百度站长平台验证站长身份 从而获得相应的信息用于下面配置
         "auto_push" => false, // 百度自动推送 开关 默认关闭 用于自动提交页面链接给百度收录
         "manual_push" => [ // 主动推送

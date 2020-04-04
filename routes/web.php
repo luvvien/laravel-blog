@@ -14,8 +14,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'Home\Blog\ArticleController@index');
-
 Auth::routes();
 
 Route::group(['prefix' => 'admin', ], function () {
@@ -50,6 +48,9 @@ Route::group(['prefix' => 'admin', ], function () {
 
         Route::get('/users/{id}', 'Admin\User\UserController@edit')->name('admin.user.edit');
         Route::post('/users', 'Admin\User\UserController@update')->name('admin.user.update');
+
+        Route::get('/info/{id}', 'Admin\Index\InfoController@edit')->name('admin.info.edit');
+        Route::post('/info', 'Admin\Index\InfoController@update')->name('admin.info.update');
     });
 });
 
@@ -57,7 +58,10 @@ Route::group(['prefix' => 'admin', ], function () {
 //    return view('auth.login');
 //});
 
-Route::get('/friend-links', 'Home\Index\LinkController@index')->name('home.blog.link.friend');
-Route::get('/{slug}', 'Home\Blog\ArticleController@show')->name('home.blog.article');
-Route::get('/category/{category}', 'Home\Blog\CategoryController@show')->name('home.blog.category.show');
-Route::get('/tag/{tag}', 'Home\Blog\TagController@show')->name('home.blog.tag.show');
+Route::group(['middleware' => 'init', ], function () {
+    Route::get('/', 'Home\Blog\ArticleController@index');
+    Route::get('/friend-links', 'Home\Index\LinkController@index')->name('home.blog.link.friend');
+    Route::get('/{slug}', 'Home\Blog\ArticleController@show')->name('home.blog.article');
+    Route::get('/category/{category}', 'Home\Blog\CategoryController@show')->name('home.blog.category.show');
+    Route::get('/tag/{tag}', 'Home\Blog\TagController@show')->name('home.blog.tag.show');
+});
