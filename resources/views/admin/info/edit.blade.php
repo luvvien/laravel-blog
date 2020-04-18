@@ -4,7 +4,7 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         @include('admin.layouts.alert')
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h2 class="h2">管理员信息</h2>
+            <h2 class="h2">网站信息</h2>
             <div class="btn-toolbar mb-2 mb-md-0">
                 <button type="submit" class="btn btn-sm btn-primary mr-1"
                         onclick="event.preventDefault();document.getElementById('edit-form').submit();">

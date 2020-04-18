@@ -35,9 +35,9 @@
     @show
     @section('css_ext')@show
     @section('ads')
-        @if(env('APP_DEBUG') == false and config('vienblog.ad.open') == true)
+        @if(!env('APP_DEBUG') and config('vienblog.ad.open'))
             {{--@include('ads.adsense')--}}
-            {{ config('vienblog.ad.script') }}
+            {!! config('vienblog.ad.script') !!}
         @endif
     @show
 
@@ -47,9 +47,9 @@
 @yield('content')
 
 @section('counter')
-    @if(env('APP_DEBUG') == false and config('vienblog.counter.open') == true)
-{{--        @include('counters.counter')--}}
-        {{ config('vienblog.counter.script') }}
+    @if(!env('APP_DEBUG') and config('vienblog.counter.open'))
+        {{--        @include('counters.counter')--}}
+        {!! config('vienblog.counter.script') !!}
     @endif
 @show
 
@@ -70,7 +70,7 @@
 @show
 @section('js_ext')
 @show
-@if(env('APP_DEBUG') == false and config('vienblog.baidu.auto_push') == true)
+@if(!env('APP_DEBUG') and config('vienblog.baidu.auto_push'))
     <script>
         (function () {
             var bp = document.createElement('script');

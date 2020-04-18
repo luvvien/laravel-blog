@@ -15,14 +15,14 @@ class SiteSwitchSeeder extends Seeder
         DB::table('switch')->insert([
             'name' => 'adsense',
             'status' => 0,
-            'extra' => '',
+            'extra' => '{"script": ""}',
             'created_at' => 1553745930,
             'updated_at' => 1553745930,
         ]);
         DB::table('switch')->insert([
             'name' => "counter",
             'status' => 0,
-            'extra' => '',
+            'extra' => '{"script": ""}',
             'created_at' => 1553745930,
             'updated_at' => 1553745930,
         ]);

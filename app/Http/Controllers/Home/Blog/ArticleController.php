@@ -16,7 +16,7 @@ class ArticleController extends CommonController
     //
     public function index(Request $request)
     {
-        $size = 20;
+        $size = 15;
         $data = Article::with('category:id,cate_name')
             ->select( 'cate_id', 'slug', 'title', 'read_count', 'created_at', 'is_top', 'description')
             ->orderByDesc('is_top')->orderByDesc('created_at');
