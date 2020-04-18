@@ -39,7 +39,7 @@
                            value="{{ $switches['sidebar']['carousel']['banners'][0]['url'] }}" required/>
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="carousel-url-1">相关描述1</label>
+                    <label for="carousel-description-1">相关描述1</label>
                     <input type="text" class="form-control" id="carousel-description-1" name="carousel-description-1"
                            value="{{ $switches['sidebar']['carousel']['banners'][0]['description'] }}" required/>
                 </div>
@@ -57,7 +57,7 @@
                            value="{{ $switches['sidebar']['carousel']['banners'][1]['url'] }}" required/>
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="carousel-url-2">相关描述2</label>
+                    <label for="carousel-description-2">相关描述2</label>
                     <input type="text" class="form-control" id="carousel-description-2" name="carousel-description-2"
                            value="{{ $switches['sidebar']['carousel']['banners'][1]['description'] }}" required/>
                 </div>
@@ -75,7 +75,7 @@
                            value="{{ $switches['sidebar']['carousel']['banners'][2]['url'] }}" required/>
                 </div>
                 <div class="form-group col-md-3">
-                    <label for="carousel-url-3">相关描述3</label>
+                    <label for="carousel-description-3">相关描述3</label>
                     <input type="text" class="form-control" id="carousel-description-3" name="carousel-description-3"
                            value="{{ $switches['sidebar']['carousel']['banners'][2]['description'] }}" required/>
                 </div>
