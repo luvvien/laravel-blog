@@ -220,6 +220,16 @@
                 </div>
             </div>
 
+            <h3>Baidu</h3>
+            <div class="form-group">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input"
+                           {{ $switches['baidu_autopush'] == 1 ? "checked" : "" }}
+                           id="baidu_autopush-switch" name="baidu_autopush-switch">
+                    <label class="custom-control-label" for="baidu_autopush-switch">是否自动提交链接到百度搜索引擎</label>
+                </div>
+            </div>
+
             <h3>AdSense</h3>
             <div class="form-group">
                 <div class="custom-control custom-switch">

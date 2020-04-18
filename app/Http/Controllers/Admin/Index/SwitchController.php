@@ -18,68 +18,7 @@ class SwitchController extends Controller
     //
     public function edit(Request $request)
     {
-        $switches = Switches::query()
-            ->select( 'id', 'name', 'status', 'extra')
-            ->get()->toArray();
-
-        $dict = array();
-
-        foreach ($switches as $switch) {
-            $extra = json_decode($switch['extra'], true);
-            $dict[$switch['name']] = array('status' => intval($switch['status']) == 1,
-                'extra' => is_null($extra) ? [] : $extra);
-        }
-
-        $sidebar = [
-            "carousel" => [
-                "open" => $dict['carousel']['status'], // 是(true)否(false)开启 默认true 开启务必设置banners
-                "banners" => $dict['carousel']['extra']
-            ],
-            "motto" => [ // 座右铭
-                "open" => $dict['motto']['status'], // 是(true)否(false)开启 默认true,
-                "title" => $dict['motto']['extra']['title'], // 标题
-                "content" => $dict['motto']['extra']['content'] // 内容
-            ],
-            "tag" => [ // 标签
-                "open" => $dict['tag']['status'], // 是(true)否(false)开启 默认true,
-                "title" => $dict['tag']['extra']['title'], // 标题
-                "count" => intval($dict['tag']['extra']['count']), // 展示数量
-            ],
-            "category" => [ // 分类
-                "open" => $dict['category']['status'], // 是(true)否(false)开启 默认true,
-                "title" => $dict['category']['extra']['title'], // 标题
-                "count" => intval($dict['category']['extra']['count']), // 展示数量
-            ],
-            "hot" => [ // 最热文章
-                "open" => $dict['hot']['status'], // 是(true)否(false)开启 默认true,
-                "title" => $dict['hot']['extra']['title'], // 标题
-                "count" => intval($dict['hot']['extra']['count']), // 展示数量
-            ],
-            "latest" => [ // 最新文章
-                "open" => $dict['latest']['status'], // 是(true)否(false)开启 默认true,
-                "title" => $dict['latest']['extra']['title'], // 标题
-                "count" => intval($dict['latest']['extra']['count']), // 展示数量
-            ],
-            "popular" => [ // 刚有人看的文章
-                "open" => $dict['popular']['status'], // 是(true)否(false)开启 默认true,
-                "title" => $dict['popular']['extra']['title'], // 标题
-                "count" => intval($dict['popular']['extra']['count']), // 展示数量
-            ],
-        ];
-
-        $adsense_script = $dict['adsense']['extra'];
-        $adsense = [
-            "open" => $dict['adsense']['status'], // Google AdSense Auto AD 开关 默认关闭 开启需要在后台中添加 AdSense代码
-            "script" => array_key_exists('script', $adsense_script) ? $adsense_script['script'] : ""
-        ];
-        $counter_script = $dict['counter']['extra'];
-        $counter = [
-            "open" => $dict['counter']['status'], // 统计工具(例如百度统计、StatCounter等) 开关 默认关闭 开启需要在后台中添加相关代码
-            "script" => array_key_exists('script', $counter_script) ? $counter_script['script'] : ""
-        ];
-
-        $switches = ['sidebar' => $sidebar, 'adsense' => $adsense, 'counter' => $counter];
-
+        $switches = self::switches();
         return view('admin.switch.edit', ['switches' => $switches]);
     }
 
@@ -121,6 +60,7 @@ class SwitchController extends Controller
 //            "counter-script" => "required"
 //        ]);
 
+        $baidu_autopushswitch = isset($input["baidu_autopush-switch"]) ? 1 : 0;
         $carouselswitch = isset($input["carousel-switch"]) ? 1 : 0;
         $carouselimage1 = $input["carousel-image-1"];
         $carouselurl1 = $input["carousel-url-1"];
@@ -204,8 +144,16 @@ class SwitchController extends Controller
             ], JSON_UNESCAPED_UNICODE);
         $carousel->save();
 
-//        $baidu_autopush = Switches::query()->where("name", "=", "baidu_autopush")->first();
+        $baidu_autopush = Switches::query()->where("name", "=", "baidu_autopush")->first();
+        $baidu_autopush->status = $baidu_autopushswitch;
+        $baidu_autopush->save();
 
+        $switches = self::switches();
+
+        return view('admin.switch.edit', ['switches' => $switches])->with(['message' => 'success']);
+    }
+
+    private function switches() {
         $switches = Switches::query()
             ->select( 'id', 'name', 'status', 'extra')
             ->get()->toArray();
@@ -266,8 +214,10 @@ class SwitchController extends Controller
             "script" => array_key_exists('script', $counter_script) ? $counter_script['script'] : ""
         ];
 
-        $switches = ['sidebar' => $sidebar, 'adsense' => $adsense, 'counter' => $counter];
+        $baidu_autopush = $dict['baidu_autopush']['status'];
 
-        return view('admin.switch.edit', ['switches' => $switches])->with(['message' => 'success']);
+        $switches = ['sidebar' => $sidebar, 'adsense' => $adsense, 'counter' => $counter, 'baidu_autopush' => $baidu_autopush];
+
+        return $switches;
     }
 }
