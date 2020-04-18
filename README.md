@@ -54,7 +54,7 @@ Markdown编辑器：支持拖拽粘贴上传图片、预览、全屏、分屏预
 ##### 获取源码
 
 ```
-git clone git@github.com:luvvien/laravel-blog.git
+git clone https://github.com/luvvien/laravel-blog.git
 ```
 
 ##### 进入项目目录后，用`composer`安装依赖
@@ -83,11 +83,11 @@ php artisan key:generate
 [...]
 
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=localhost
 DB_PORT=3306
 DB_DATABASE=vienblog
 DB_USERNAME=root
-DB_PASSWORD=root
+DB_PASSWORD=
 
 [...]
 ```
