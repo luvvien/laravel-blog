@@ -1,7 +1,7 @@
 <div class="container">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md fixed-top theme-header-navbar">
         <div class="container">
-            <a class="navbar-brand pl-2" href="/">{{ config('vienblog.blog.name') }}</a>
+            <a class="navbar-brand pl-2 theme-header-navbar-link" href="/">{{ config('vienblog.blog.name') }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -10,10 +10,10 @@
                 <a href="https://vienblog.com"></a>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">首页<span class="sr-only">(current)</span></a>
+                        <a class="nav-link theme-header-navbar-link" href="/">首页<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.blog.link.friend') }}">友情链接</a>
+                        <a class="nav-link theme-header-navbar-link" href="{{ route('home.blog.link.friend') }}">友情链接</a>
                     </li>
                 </ul>
                 {{--<form class="form-inline mt-2 mt-md-0">--}}
@@ -44,7 +44,7 @@
     <div class="nav-scroller mb-2">
         <nav class="nav d-flex justify-content-between">
             @foreach(config('vienblog.header.links') as $link)
-                <a class="p-2 text-muted" href="{{ $link['url'] }}">{{ $link['title'] }}</a>
+                <a class="p-2 theme-under-header-links-text" href="{{ $link['url'] }}">{{ $link['title'] }}</a>
             @endforeach
         </nav>
     </div>

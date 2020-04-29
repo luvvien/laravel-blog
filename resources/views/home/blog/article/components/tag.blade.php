@@ -1,6 +1,6 @@
 @if(config('vienblog.sidebar.tag.open'))
     <div class="p-3">
-        <h5 class="font-weight-bold">{{ config('vienblog.sidebar.tag.title') }}</h5>
+        <h5 class="font-weight-bold theme-first-text">{{ config('vienblog.sidebar.tag.title') }}</h5>
         <div>
             @foreach($sidebar_tags as $tag)
                 <a href="{{ route('home.blog.tag.show', $tag['tag_name']) }}" class="badge badge-pill

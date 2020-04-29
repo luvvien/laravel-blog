@@ -3,17 +3,17 @@
     <div class="row">
         @foreach($data as $article)
             <div class="col-12 pb-3 px-4 mb-2">
-                <a class="h5 text-bold text-dark text-decoration-none" href="{{ route('home.blog.article', $article['slug']) }}">
+                <a class="h5 text-bold text-decoration-none" href="{{ route('home.blog.article', $article['slug']) }}">
                     @if($article['is_top'] == 1)
-                        <span class="badge badge-danger align-top">置顶</span>
+                        <span class="badge theme-article-list-title-top align-top">置顶</span>
                     @endif
-                    <span class="badge badge-info align-top">{!! $article['category']['cate_name'] !!}</span>
-                    {!! $article['title'] !!}
+                    <span class="badge align-top theme-article-list-title-category">{!! $article['category']['cate_name'] !!}</span>
+                    <span class="theme-article-list-title-text">{!! $article['title'] !!}</span>
                 </a>
-                <p class="pt-1 mb-0 text-muted text-break">
+                <p class="pt-1 mb-0 theme-article-list-description-text text-break">
                     {!! $article['description'] !!}
                 </p>
-                <small class="text-small text-muted">阅读: {{ $article['read_count'] }}次 &nbsp; 发布时间: {{ vn_time($article['created_at']) }}</small>
+                <small class="text-small theme-article-list-read-date-text">阅读: {{ $article['read_count'] }}次 &nbsp; 发布时间: {{ vn_time($article['created_at']) }}</small>
             </div>
         @endforeach
     </div>

@@ -32,6 +32,7 @@
     {{--    <link href="{{ asset('css/base.css') }}" rel="stylesheet">--}}
     @section('css')
         <link href="{{ mix('/css/web.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ mix('/css/'.env('THEME', 'gray').'.css') }}" rel="stylesheet" type="text/css"/>
     @show
     @section('css_ext')@show
     @section('ads')

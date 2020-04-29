@@ -24,6 +24,8 @@ mix.js('resources/assets/js/admin.js', 'public/js/admin.js');
 
 // web css, js
 mix.sass('resources/assets/css/web.scss', 'public/css/web.css');
+mix.sass('resources/assets/css/pink.scss', 'public/css/pink.css');
+mix.sass('resources/assets/css/gray.scss', 'public/css/gray.css');
 mix.js(['resources/assets/js/web.js'], 'public/js/web.js');
 
 // version

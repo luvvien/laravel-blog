@@ -18,7 +18,7 @@
     </div>
 
     <div class="blog-post mb-3">
-        <h1 class="blog-post-title">{!! $article['title'] !!}</h1>
+        <h1 class="blog-post-title theme-first-text">{!! $article['title'] !!}</h1>
 
         <p class="blog-post-meta mb-0">
             {{ vn_time($article['created_at']) }} |
@@ -32,7 +32,7 @@
             {{--            <a href="#" class="badge badge-dark">{{ $article['category']['cate_name'] }}</a>--}}
             @foreach($article['tags'] as $tag)
                 <a href="{{ route('home.blog.tag.show', $tag['tag_name']) }}"
-                   class="badge badge-secondary">{{ $tag['tag_name'] }}</a>
+                   class="badge theme-tag">{{ $tag['tag_name'] }}</a>
             @endforeach
         </p>
 
