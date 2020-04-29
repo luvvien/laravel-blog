@@ -37,6 +37,7 @@ Route::group(['prefix' => 'admin', ], function () {
         Route::post('/blog/articles/delete', 'Admin\Blog\ArticleController@delete')->name('admin.blog.article.delete');
         Route::post('/blog/articles/top', 'Admin\Blog\ArticleController@top')->name('admin.blog.article.top');
         Route::post('/upload/image/article', 'Admin\UploadController@image')->name('admin.upload.article.image');
+//        Route::post('/upload/file', 'Admin\UploadController@file')->name('admin.upload.file');
 
         Route::get('/links/friends', 'Admin\Index\LinkController@index')->name('admin.links.friend.list');
         Route::get('/links/friends/new', 'Admin\Index\LinkController@new')->name('admin.links.friend.new');
@@ -44,6 +45,9 @@ Route::group(['prefix' => 'admin', ], function () {
         Route::get('/links/friends/edit/{id}', 'Admin\Index\LinkController@edit')->name('admin.links.friend.edit');
         Route::post('/links/friends/update', 'Admin\Index\LinkController@update')->name('admin.links.friend.update');
         Route::post('/links/friends/delete', 'Admin\Index\LinkController@delete')->name('admin.links.friend.delete');
+        Route::get('/upload/files/new', 'Admin\Index\UploadController@add')->name('admin.upload.file.new');
+        Route::post('/upload/files/store', 'Admin\Index\UploadController@upload')->name('admin.upload.file.store');
+        Route::get('/upload/files/all', 'Admin\Index\UploadController@all')->name('admin.upload.file.all');
 
 
         Route::get('/users/{id}', 'Admin\User\UserController@edit')->name('admin.user.edit');

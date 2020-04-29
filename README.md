@@ -10,6 +10,17 @@ Vien Blog - 一款基于laravel5.8开发的，支持markdown编辑以及图片�
 
 Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
 
+## 友链
+
+使用[Vien Blog](https://vienblog.com)构建应用可添加友链至[Vien Blog 友情链接](https://vienblog.com/friend-links)
+点击[Vien Blog 友情链接](https://vienblog.com/friend-links)查看已添加的友链
+
+## 更新
+
+- 20200405 后台功能添加（网站信息管理） 需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteInfoSeeder`
+- 20200418 后台功能添加（网站设置，添加开关和统计代码等后台管理）需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteSwitchSeeder`
+- 20200429 后台功能添加（图片上传功能） 需要执行 `php artisan migrate`
+
 ## 博客亮点
 
 - 界面简洁、适配pc和mobile、有良好的视觉体验

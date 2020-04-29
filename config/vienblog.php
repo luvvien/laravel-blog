@@ -121,7 +121,8 @@ return [
         ],
     ],
     "disks" => [
-        "article_image" => "vienblog" // 文章中图片的disk(disk在filesystem.php中配置)
+        "article_image" => "vienblog", // 文章中图片的disk(disk在filesystem.php中配置)
+        "files" => "vienfile"
     ],
     "ad" => [
         "open" => false, // Google AdSense Auto AD 开关 默认关闭 开启需要在后台中添加 AdSense代码
