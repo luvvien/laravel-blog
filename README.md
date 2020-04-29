@@ -21,6 +21,8 @@ Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
 - 20200418 后台功能添加（网站设置，添加开关和统计代码等后台管理）需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteSwitchSeeder`
 - 20200429 后台功能添加（图片上传功能） 需要执行 `php artisan migrate`
 
+**注意：如果执行seed提示找不到，请执行`composer dump-autoload`后再执行**
+
 ## 博客亮点
 
 - 界面简洁、适配pc和mobile、有良好的视觉体验
@@ -110,7 +112,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
-如果遇到`SQLSTATE[42000] Syntax error or access violation Specified key was too long error`错误，请参照https://vien.tech/article/156 解决
+如果遇到`SQLSTATE[42000] Syntax error or access violation Specified key was too long error`错误，请参照https://viencoding.com/article/156 解决
 
 ##### 创建storage软连接
 
