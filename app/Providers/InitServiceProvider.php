@@ -48,6 +48,7 @@ class InitServiceProvider extends ServiceProvider
                 ];
 
                 $this->app->get('config')->set('vienblog.author', $author);
+                $this->app->get('config')->set('vienblog.header.links', json_decode($information->navigation, true));
             }
 
             $switches = Switches::query()
@@ -111,11 +112,20 @@ class InitServiceProvider extends ServiceProvider
                     "script" => array_key_exists('script', $counter_script) ? $counter_script['script'] : ""
                 ];
 
+                $baidu_autopush_script = $dict['baidu_autopush']['extra'];
+                $baidu_push_domain = array_key_exists('domain', $baidu_autopush_script) ? $baidu_autopush_script['domain'] : "";
+                $baidu_push_api = array_key_exists('api', $baidu_autopush_script) ? $baidu_autopush_script['api'] : "";
+                $baidu_push = [
+                    "domain" => $baidu_push_domain,
+                    "api" => $baidu_push_api,
+                    "open" => $baidu_push_domain && $baidu_push_api
+                ];
+
                 $this->app->get('config')->set('vienblog.sidebar', $sidebar);
                 $this->app->get('config')->set('vienblog.ad', $adsense);
                 $this->app->get('config')->set('vienblog.counter', $counter);
                 $this->app->get('config')->set('vienblog.baidu.auto_push', $dict['baidu_autopush']['status']);
-
+                $this->app->get('config')->set('vienblog.baidu.manual_push', $baidu_push);
 //            dump($this->app->get('config')->get('vienblog'));
             }
         } catch (\Exception $e) {

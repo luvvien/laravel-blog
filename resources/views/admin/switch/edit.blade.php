@@ -230,6 +230,20 @@
                 </div>
             </div>
 
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="baidupush-domain">手动推送 博客地址</label>
+                    <input type="text" class="form-control" id="baidupush-domain" name="baidupush-domain"
+                           value="{{ $switches['baidu_push']['domain'] }}" placeholder="示例: https://vienblog.com">
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="baidupush-api">手动推送 百度API</label>
+                    <input type="text" class="form-control" id="baidupush-api" name="baidupush-api"
+                           value="{{ $switches['baidu_push']['api'] }}" placeholder="请到百度站长平台获取"/>
+                </div>
+            </div>
+
             <h3>AdSense</h3>
             <div class="form-group">
                 <div class="custom-control custom-switch">

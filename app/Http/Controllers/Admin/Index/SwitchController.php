@@ -61,6 +61,8 @@ class SwitchController extends Controller
 //        ]);
 
         $baidu_autopushswitch = isset($input["baidu_autopush-switch"]) ? 1 : 0;
+        $baidupush_domain = $input["baidupush-domain"];
+        $baidupush_api = $input["baidupush-api"];
         $carouselswitch = isset($input["carousel-switch"]) ? 1 : 0;
         $carouselimage1 = $input["carousel-image-1"];
         $carouselurl1 = $input["carousel-url-1"];
@@ -99,53 +101,55 @@ class SwitchController extends Controller
         $adsense->status = $adsenseswitch;
         $adsense->extra = json_encode(["script" => $adsensescript], JSON_UNESCAPED_UNICODE);
         $adsense->save();
-        
+
         $counter = Switches::query()->where("name", "=", "counter")->first();
         $counter->status = $counterswitch;
         $counter->extra = json_encode(["script" => $counterscript], JSON_UNESCAPED_UNICODE);
         $counter->save();
-        
+
         $motto = Switches::query()->where("name", "=", "motto")->first();
         $motto->status = $mottoswitch;
         $motto->extra = json_encode(["title" => $mottotitle, "content" => $mottocontent], JSON_UNESCAPED_UNICODE);
         $motto->save();
-        
+
         $tag = Switches::query()->where("name", "=", "tag")->first();
         $tag->status = $tagswitch;
         $tag->extra = json_encode(["title" => $tagtitle, "count" => $tagcount], JSON_UNESCAPED_UNICODE);
         $tag->save();
-        
+
         $category = Switches::query()->where("name", "=", "category")->first();
         $category->status = $categoryswitch;
         $category->extra = json_encode(["title" => $categorytitle, "count" => $categorycount], JSON_UNESCAPED_UNICODE);
         $category->save();
-        
+
         $hot = Switches::query()->where("name", "=", "hot")->first();
         $hot->status = $hotswitch;
         $hot->extra = json_encode(["title" => $hottitle, "count" => $hotcount], JSON_UNESCAPED_UNICODE);
         $hot->save();
-        
+
         $latest = Switches::query()->where("name", "=", "latest")->first();
         $latest->status = $latestswitch;
         $latest->extra = json_encode(["title" => $latesttitle, "count" => $latestcount], JSON_UNESCAPED_UNICODE);
         $latest->save();
-        
+
         $popular = Switches::query()->where("name", "=", "popular")->first();
         $popular->status = $popularswitch;
         $popular->extra = json_encode(["title" => $populartitle, "count" => $popularcount], JSON_UNESCAPED_UNICODE);
         $popular->save();
-        
+
         $carousel = Switches::query()->where("name", "=", "carousel")->first();
         $carousel->status = $carouselswitch;
         $carousel->extra = json_encode([
             ["image" => $carouselimage1, "url" => $carouselurl1, "description" => $carouseldescription1],
             ["image" => $carouselimage2, "url" => $carouselurl2, "description" => $carouseldescription2],
             ["image" => $carouselimage3, "url" => $carouselurl3, "description" => $carouseldescription3]
-            ], JSON_UNESCAPED_UNICODE);
+        ], JSON_UNESCAPED_UNICODE);
         $carousel->save();
 
         $baidu_autopush = Switches::query()->where("name", "=", "baidu_autopush")->first();
         $baidu_autopush->status = $baidu_autopushswitch;
+        $baidu_autopush->extra = json_encode(["domain" => $baidupush_domain ? $baidupush_domain : "",
+            "api" => $baidupush_api ? $baidupush_api : ""], JSON_UNESCAPED_UNICODE);
         $baidu_autopush->save();
 
         $switches = self::switches();
@@ -153,9 +157,10 @@ class SwitchController extends Controller
         return view('admin.switch.edit', ['switches' => $switches])->with(['message' => 'success']);
     }
 
-    private function switches() {
+    private function switches()
+    {
         $switches = Switches::query()
-            ->select( 'id', 'name', 'status', 'extra')
+            ->select('id', 'name', 'status', 'extra')
             ->get()->toArray();
 
         $dict = array();
@@ -215,8 +220,11 @@ class SwitchController extends Controller
         ];
 
         $baidu_autopush = $dict['baidu_autopush']['status'];
+        $baidu_push = $dict['baidu_autopush']['extra'] ? $dict['baidu_autopush']['extra'] :
+            ["domain" => "", "api" => ""];
 
-        $switches = ['sidebar' => $sidebar, 'adsense' => $adsense, 'counter' => $counter, 'baidu_autopush' => $baidu_autopush];
+        $switches = ['sidebar' => $sidebar, 'adsense' => $adsense, 'counter' => $counter,
+            'baidu_autopush' => $baidu_autopush, 'baidu_push' => $baidu_push];
 
         return $switches;
     }

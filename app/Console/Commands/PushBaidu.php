@@ -55,9 +55,8 @@ class PushBaidu extends Command
      */
     public function handle()
     {
-        dump(config('vienblog.baidu.manual_push.open'));
         if(!config('vienblog.baidu.manual_push.open')) {
-            dump('未开启主动推送，请在config/vienblog.php中的baidu选项中根据注释内容配置，开启主动推送需要先配置domain和api');
+            dump('未开启主动推送，请在后台中配置domain和api');
             return;
         }
 

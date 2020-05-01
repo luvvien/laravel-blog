@@ -18,7 +18,7 @@ class InfoController extends Controller
     public function edit(Request $request)
     {
         $information = Information::query()
-            ->select( 'id', 'site_title', 'site_keywords', 'site_description', 'author_name', 'author_intro', 'author_avatar', 'navigation')
+            ->select('id', 'site_title', 'site_keywords', 'site_description', 'author_name', 'author_intro', 'author_avatar', 'navigation')
             ->first()->toArray();
         return view('admin.info.edit', ['information' => $information]);
     }
@@ -46,6 +46,15 @@ class InfoController extends Controller
         $information->author_name = $input['author_name'];
         $information->author_intro = $input['author_intro'];
         $information->author_avatar = $input['author_avatar'];
+
+        $navigation = [];
+        for ($i = 0; $i < 9; $i++) {
+            $title = $input['navigation-title-'.strval($i)];
+            $url = $input['navigation-url-'.strval($i)];
+            if ($title && $url) $navigation[] = ["title" => $title, "url" => $url];
+        }
+
+        $information->navigation = json_encode($navigation, JSON_UNESCAPED_UNICODE);
 
         $information->save();
 
