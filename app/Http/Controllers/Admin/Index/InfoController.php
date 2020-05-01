@@ -48,7 +48,8 @@ class InfoController extends Controller
         $information->author_avatar = $input['author_avatar'];
 
         $navigation = [];
-        for ($i = 0; $i < 9; $i++) {
+        for ($i = 0; $i < 12; $i++) {
+            if (!isset($input['navigation-title-'.strval($i)]) || !isset($input['navigation-url-'.strval($i)])) break;
             $title = $input['navigation-title-'.strval($i)];
             $url = $input['navigation-url-'.strval($i)];
             if ($title && $url) $navigation[] = ["title" => $title, "url" => $url];

@@ -80,6 +80,25 @@
                                value="{{ $navigation['url'] }}"/>
                     </div>
                 </div>
+                @if($loop->index + 1 == $loop->count)
+                    @for($i = $loop->index + 1; $i < 12; $i++)
+                        <div class="form-row col-md-6">
+                            <div class="form-group col-md-4">
+                                <label for="navigation-title-{{ $i }}">顶部导航{{ $i }}</label>
+                                <input type="text" class="form-control" id="navigation-title-{{ $i }}"
+                                       name="navigation-title-{{ $i }}"
+                                       value="">
+
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="navigation-url-{{ $i }}">跳转链接{{ $i }}</label>
+                                <input type="text" class="form-control" id="navigation-url-{{ $i }}"
+                                       name="navigation-url-{{ $i }}"
+                                       value=""/>
+                            </div>
+                        </div>
+                    @endfor
+                @endif
             @endforeach
 
             <button type="submit" class="mt-2 ml-3 btn btn-sm btn-primary">提交</button>
