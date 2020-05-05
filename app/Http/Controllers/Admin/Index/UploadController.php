@@ -51,6 +51,11 @@ class UploadController extends Controller
         ) {
             $path = $request->file->store(date('Ymd'), config('vienblog.disks.files'));
             $url = Storage::disk(config('vienblog.disks.files'))->url($path);
+            if (env('WATERMARK', '')) {
+                try {
+                    watermark(public_path($url), public_path($url), env('WATERMARK'));
+                }catch (\Exception $e) {}
+            }
 //            return response()->json(['filename' => $url]);
             $file = new File();
             $file->path = $url;

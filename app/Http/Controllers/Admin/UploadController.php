@@ -25,6 +25,11 @@ class UploadController extends Controller
             $path = $request->file->store(date('Ymd'), config('vienblog.disks.article_image'));
             $url = Storage::disk(config('vienblog.disks.article_image'))->url($path);
 
+            if (env('WATERMARK', '')) {
+                try {
+                    watermark(public_path($url), public_path($url), env('WATERMARK'));
+                }catch (\Exception $e) {}
+            }
 
             if (env('TINIFY_APIKEY', '') && in_array($request->file->extension(), ["png", "jpg", "jpeg"])) {
 

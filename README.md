@@ -6,6 +6,10 @@ Vien Blog - 一款基于laravel5.8开发的，支持markdown编辑以及图片�
 - [VienBlog](https://vienblog.com)
 - [这里有些小秘密](https://vien.tech)
 
+## 宝塔教程
+
+感谢大鸟博客写了宝塔搭建本博客的教程，详情戳[宝塔面板安装laravel-blog](https://www.daniao.org/9085.html)
+
 ## 项目Github地址
 
 Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
