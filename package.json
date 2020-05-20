@@ -28,6 +28,6 @@
         "inline-attachment": "^2.0.3",
         "npm": "^6.9.0",
         "simplemde": "^1.11.2",
-        "yarn": "^1.13.0"
+        "yarn": "^1.22.0"
     }
 }
