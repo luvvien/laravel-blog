@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
          $this->call(FriendLinkTableSeeder::class);
          $this->call(SiteInfoSeeder::class);
          $this->call(SiteSwitchSeeder::class);
+         $this->call(SettingSeeder::class);
     }
 }

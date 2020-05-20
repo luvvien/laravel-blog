@@ -25,9 +25,9 @@ class UploadController extends Controller
             $path = $request->file->store(date('Ymd'), config('vienblog.disks.article_image'));
             $url = Storage::disk(config('vienblog.disks.article_image'))->url($path);
 
-            if (env('WATERMARK', '')) {
+            if (config('vienblog.setting.watermark.open')) {
                 try {
-                    watermark(public_path($url), public_path($url), env('WATERMARK'));
+                    watermark(public_path($url), public_path($url), config('vienblog.setting.watermark.content'));
                 }catch (\Exception $e) {}
             }
 

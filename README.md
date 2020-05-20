@@ -21,9 +21,10 @@ Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
 
 ## 更新
 
-- 20200405 后台功能添加（网站信息管理） 需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteInfoSeeder`
-- 20200418 后台功能添加（网站设置，添加开关和统计代码等后台管理）需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteSwitchSeeder`
-- 20200429 后台功能添加（图片上传功能） 需要执行 `php artisan migrate`
+- 20200520 功能添加（图片自动水印），添加粉色主题 更新后需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SettingSeeder`
+- 20200429 后台功能添加（图片上传功能） 更新后需要执行 `php artisan migrate`
+- 20200418 后台功能添加（网站设置，添加开关和统计代码等后台管理）更新后需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteSwitchSeeder`
+- 20200405 后台功能添加（网站信息管理） 更新后需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteInfoSeeder`
 
 **注意：如果执行seed提示找不到，请执行`composer dump-autoload`后再执行**
 

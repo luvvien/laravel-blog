@@ -57,6 +57,8 @@ Route::group(['prefix' => 'admin', ], function () {
         Route::post('/info', 'Admin\Index\InfoController@update')->name('admin.info.update');
         Route::get('/switches', 'Admin\Index\SwitchController@edit')->name('admin.switch.edit');
         Route::post('/switches', 'Admin\Index\SwitchController@update')->name('admin.switch.update');
+        Route::get('/settings', 'Admin\Index\SettingController@edit')->name('admin.setting.edit');
+        Route::post('/settings', 'Admin\Index\SettingController@update')->name('admin.setting.update');
     });
 });
 

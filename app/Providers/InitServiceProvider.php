@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Index\Information;
+use App\Models\Index\Setting;
 use App\Models\Index\Switches;
 use Illuminate\Support\ServiceProvider;
 
@@ -128,6 +129,12 @@ class InitServiceProvider extends ServiceProvider
                 $this->app->get('config')->set('vienblog.baidu.manual_push', $baidu_push);
 //            dump($this->app->get('config')->get('vienblog'));
             }
+
+            $setting = Setting::query()
+                ->select('json')
+                ->first();
+            $this->app->get('config')->set('vienblog.setting', json_decode($setting->json, true));
+
         } catch (\Exception $e) {
 
         }

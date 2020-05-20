@@ -139,5 +139,12 @@ return [
             "domain" => "https://baidu.com", // 主动推送的博客地址
             "api" => "http://data.zz.baidu.com/urls?site=https://baidu.com&token=lLC6nY5KkflD8Pz2" // 主动推送接口调用地址
         ]
+    ],
+    "setting" => [
+        "watermark" => [
+            "open"=> false,
+            "content" => "VienBlog.com"
+        ],
+        "theme" => "gray" // pink
     ]
 ];
