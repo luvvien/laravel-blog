@@ -21,6 +21,7 @@ Github: [laravel-blog](https://github.com/luvvien/laravel-blog) ，欢迎Star。
 
 ## 更新
 
+- 20200520 添加sitemap自动生成功能 更新后需要执行 `composer update` 安装依赖，项目目录下执行 `php artisan sitemap:generate` 即可生成
 - 20200520 功能添加（图片自动水印），添加粉色主题 更新后需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SettingSeeder`
 - 20200429 后台功能添加（图片上传功能） 更新后需要执行 `php artisan migrate`
 - 20200418 后台功能添加（网站设置，添加开关和统计代码等后台管理）更新后需要执行 `php artisan migrate` 和 `php artisan db:seed --class=SiteSwitchSeeder`
@@ -187,6 +188,14 @@ server {
 
 ```
 php artisan push:baidu
+```
+
+#### SiteMap自动生成工具
+
+使用前请先在`.env`中配置好`APP_URL`，最终会在`public`下生成名为`sitemap_20200520`的sitemap文件
+
+```
+php artisan sitemap:generate
 ```
 
 ## 讨论群
